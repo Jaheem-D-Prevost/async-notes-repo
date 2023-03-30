@@ -1,0 +1,7 @@
+1. Normally JavaScript runs code synchronously, which means that code is
+executed as it is written, from top to bottom, with the code written before
+having to be executed before the code below itself is run. Asynchronous
+JavaScript allows for code to be executed without blocking the flow of
+execution from the code written beneath it. Event listeners in JavaScript 
+use async code to wait and listen for a certain event to be triggered
+before the associated callback function is executed.
