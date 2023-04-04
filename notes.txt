@@ -5,3 +5,5 @@ JavaScript allows for code to be executed without blocking the flow of
 execution from the code written beneath it. Event listeners in JavaScript 
 use async code to wait and listen for a certain event to be triggered
 before the associated callback function is executed.
+
+2.The fetch api is used to make requests to a web server and receives a response in the form of promise. A promise is a special kind of object that be in one of three states, pending, fulfilled, or rejected. The pending state signifies that the promise had been created and asynchronous function has neither succeeded or failed. The fulfilled state signifies that the function has succeeded and is handled using the .then method. The rejected state signifies that the function failed and is handled using the .catch method.
