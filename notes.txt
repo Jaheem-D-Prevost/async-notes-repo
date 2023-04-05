@@ -7,3 +7,38 @@ use async code to wait and listen for a certain event to be triggered
 before the associated callback function is executed.
 
 2.The fetch api is used to make requests to a web server and receives a response in the form of promise. A promise is a special kind of object that be in one of three states, pending, fulfilled, or rejected. The pending state signifies that the promise had been created and asynchronous function has neither succeeded or failed. The fulfilled state signifies that the function has succeeded and is handled using the .then method. The rejected state signifies that the function failed and is handled using the .catch method.
+
+3.
+
+function encryptString(str, rot=1) {
+  return new Promise((resolve, reject) => {
+    let rotatedString = '';
+
+    if (str.length < 0) {
+      throw new Error('Please enter a valid string.');
+    }
+
+    if (rot < 1) {
+      throw new Error('Rotation value must be greater than 0');
+    }
+    
+
+    for (let i = 0; i < str.length; i++) {
+      if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) {
+        if (str.charCodeAt(i) + rot <= 90) {
+          let rotatedChar = String.fromCharCode(str.charCodeAt(i) + rot);
+          rotatedString += rotatedChar;
+        } else {
+          let rotatedChar = String.fromCharCode((str.charCodeAt(i) + rot) - 26);
+          rotatedString += rotatedChar;
+        }
+      
+      } else {
+        rotatedString += str.charAt(i);
+      }
+    }
+    resolve(`Rotated string: ${rotatedString}`);
+  });
+}
+
+console.log(encryptString("SECRET MESSAGE", 13));
