@@ -42,3 +42,5 @@ function encryptString(str, rot=1) {
 }
 
 console.log(encryptString("SECRET MESSAGE", 13));
+
+4. Web Workers allow for a developer to run a task in a separate thread. There are caveats to using them though, due to the nature of running multithreaded code there's always the chance of both threads needing to access the same variable at different points in time which can lead to errors if the variable was changed in an unexpected way by the other thread. Your main code and worker code should never have direct access to each other's variables because of this reason.
